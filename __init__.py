@@ -10,7 +10,6 @@ app=Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def index():
-    print('CHICAGO BEARS')
     return flask.render_template('index.html')
 
 
@@ -22,9 +21,7 @@ def ValuePredictor(to_predict_list):
 
 @app.route('/result',methods = ['POST'])
 def result():
-    print('TENNESSEE TITANS')
     if request.method == 'POST':
-        print('DETROIT LIONS')
         to_predict_list = request.form.to_dict()
         to_predict_list=list(to_predict_list.values())
         to_predict_list = list(map(int, to_predict_list))
